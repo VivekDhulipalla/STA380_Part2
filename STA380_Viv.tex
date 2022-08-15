@@ -1,0 +1,1821 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={STA 380 Part 2 Exercises},
+  pdfauthor={Vivek Dhulipalla (UT EID- vd6543)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{STA 380 Part 2 Exercises}
+\author{Vivek Dhulipalla (UT EID- vd6543)}
+\date{08/10/2022}
+
+\begin{document}
+\maketitle
+
+\#\#GitHub:
+
+\tableofcontents
+\clearpage
+
+\#1. Probability Practice
+
+\hypertarget{part-a}{%
+\subsection{Part A}\label{part-a}}
+
+\begin{itemize}
+\tightlist
+\item
+  Total probability of an yes \(P(Y) = 0.65\)
+\item
+  Probability of an yes given the click is by a random clicker
+  \(P(Y/RC) = 0.5\)
+\item
+  Probability of a clicker being a random clicker \(P(RC) = 0.3\)
+\item
+  Probability of a clicker being a truthful clicker \(P(TC) = 0.7\)
+\end{itemize}
+
+Let's consider the total probability equation of yes to get started
+with: Total probability \(P(Y)\) =\\
+Joint probability of Yes and Random Clickers \(P(Y,RC)\) +Joint
+probability of Yes and Random Clickers \(P(Y,TC)\)\\
+i.e \(P(Y) = P(Y,RC) + P(Y,TC)\)\\
+=\textgreater{} \(P(Y) = P(Y/RC)*P(RC) + P(Y/TC)*P(TC)\)\\
+=\textgreater{} \(P(Y/TC)*P(TC) = P(Y) - P(Y/RC)*P(RC)\)\\
+=\textgreater{} \(P(Y/TC) = (P(Y) - P(Y/RC)*P(RC))/P(TC)\)\\
+Substituting the given values\\
+\$P(Y/TC) = (0.65 - (0.5*0.3))/0.7
+
+\textbf{Fraction of people who are truthful clickers answered yes =
+\(5/7\)}
+
+\hypertarget{part-b}{%
+\subsection{Part B}\label{part-b}}
+
+\nextpage
+
+\#2. Wrangling the Billboard Top 100
+
+\hypertarget{part-a-make-a-table-of-the-top-10-most-popular-songs-since-1958.}{%
+\subsection{Part A: Make a table of the top 10 most popular songs since
+1958.}\label{part-a-make-a-table-of-the-top-10-most-popular-songs-since-1958.}}
+
+\begin{verbatim}
+## # A tibble: 10 x 3
+## # Groups:   song [10]
+##    song                                performer                           count
+##    <chr>                               <chr>                               <int>
+##  1 Radioactive                         Imagine Dragons                        87
+##  2 Sail                                AWOLNATION                             79
+##  3 Blinding Lights                     The Weeknd                             76
+##  4 I'm Yours                           Jason Mraz                             76
+##  5 How Do I Live                       LeAnn Rimes                            69
+##  6 Counting Stars                      OneRepublic                            68
+##  7 Party Rock Anthem                   LMFAO Featuring Lauren Bennett & G~    68
+##  8 Foolish Games/You Were Meant For Me Jewel                                  65
+##  9 Rolling In The Deep                 Adele                                  65
+## 10 Before He Cheats                    Carrie Underwood                       64
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  The above table displays the top 10 most popular songs since 1958
+  based on the total number of weeks that a song spent on the Billboard
+  Top 100.
+\end{itemize}
+
+\hypertarget{part-b-is-the-musical-diversity-of-the-billboard-top-100-changing-over-time}{%
+\subsection{Part B: Is the ``musical diversity'' of the Billboard Top
+100 changing over
+time?}\label{part-b-is-the-musical-diversity-of-the-billboard-top-100-changing-over-time}}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  The above line graph shows the number of distinct songs in the
+  Billboard top 100 in each year from 1959 to 2020. As we can see, the
+  number of distinct songs in the years 1965-1970 were pretty high but
+  consistently decreased after that until the year 2000. From the year
+  2000, the number of distinct songs consistently increased till the
+  year 2020.
+\end{itemize}
+
+\hypertarget{part-c-ten-week-hit}{%
+\subsection{Part C: Ten-week hit}\label{part-c-ten-week-hit}}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'song'. You can override using the
+## `.groups` argument.
+\end{verbatim}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  The bar plot shows the artists who have atleast 30 songs that appeared
+  in the top 100 billboard list for more than 10 weeks. Elton John has
+  is on the top of the list with 52 ten week hit songs followed by
+  Madonna, Kenny Chesney, Tim McGraw and Keith Urban in the top 5
+\end{itemize}
+
+\nextpage
+
+\#3. Visual story telling part 1: Green Buildings
+
+\begin{verbatim}
+## [1] 7894
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 7679
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Green buildings in each cluster should be compared to non-green
+  buildings in the same cluster. This will give us the advantage of a
+  green building if any financially. I agree with the excel guru that
+  buildings with less than 10\% occupancy need to be removed. There are
+  215 such buildings
+\end{itemize}
+
+\#similar green buildings
+
+\begin{verbatim}
+## [1] 39.542 39.542 39.542 39.542 39.542
+\end{verbatim}
+
+\begin{verbatim}
+##  [1] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+##  [9] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+## [17] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+## [25] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+## [33] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+## [41] 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216 26.05216
+## [49] 26.05216 26.05216 26.05216
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Above table shows the average rent of green buildings and non-green
+  which have 15 stories and are of size 250000. We see that the average
+  rent of green buildings is higher.
+\end{itemize}
+
+\begin{verbatim}
+## [1] 0.01026 0.01026 0.01026 0.01026 0.01026
+\end{verbatim}
+
+\begin{verbatim}
+##  [1] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+##  [8] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [15] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [22] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [29] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [36] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [43] 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373 0.0110373
+## [50] 0.0110373 0.0110373
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Average Gas cost of green buildings is almost equal to that of
+  non-green buildings
+\end{itemize}
+
+\begin{verbatim}
+## [1] 0.03602 0.03602 0.03602 0.03602 0.03602
+\end{verbatim}
+
+\begin{verbatim}
+##  [1] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+##  [7] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [13] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [19] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [25] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [31] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [37] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [43] 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945 0.02803945
+## [49] 0.02803945 0.02803945 0.02803945
+\end{verbatim}
+
+\begin{itemize}
+\item
+  Average electricity cost of green buildings is higher
+\item
+  From the above analysis, I think that the excel guru should not have
+  calculated the median values over the entire data set of green and
+  non-green buildings. Instead they should have only chosen those
+  buildings that had similar number of stories and square footage for
+  comparison. Having said that, when it is done, the rent of green
+  buildings seems to be around 18.75\$ more than non-green buildings.
+  Which is 18.75 * 250000 = 4,687,500 extra revenue per year. This means
+  that we cover the extra 5\% premium in a little over a year itself.
+  Hence, it is a great financial move to build a green building.
+\item
+  Within each cluster find the median rent of the non green buildings
+  and compare with the green building
+\end{itemize}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-9-2.pdf}
+
+\begin{verbatim}
+## integer(0)
+\end{verbatim}
+
+\nextpage
+
+\#4. Visual story telling part 2: Capital Metro data
+
+\nextpage
+
+\#5. Portfolio Modeling
+
+\hypertarget{background}{%
+\subsection{Background}\label{background}}
+
+\hypertarget{in-this-problem-you-will-construct-three-different-portfolios-of-exchange-traded-funds-or-etfs-and-use-bootstrap-resampling-to-analyze-the-short-term-tail-risk-of-your-portfolios.-if-youre-unfamiliar-with-exchange-traded-funds-you-can-read-a-bit-about-them-here.}{%
+\subsubsection{In this problem, you will construct three different
+portfolios of exchange-traded funds, or ETFs, and use bootstrap
+resampling to analyze the short-term tail risk of your portfolios. If
+you're unfamiliar with exchange-traded funds, you can read a bit about
+them
+here.}\label{in-this-problem-you-will-construct-three-different-portfolios-of-exchange-traded-funds-or-etfs-and-use-bootstrap-resampling-to-analyze-the-short-term-tail-risk-of-your-portfolios.-if-youre-unfamiliar-with-exchange-traded-funds-you-can-read-a-bit-about-them-here.}}
+
+\hypertarget{the-goal}{%
+\subsection{The Goal}\label{the-goal}}
+
+\hypertarget{suppose-you-have-100000-in-capital.-your-task-is-to}{%
+\subsubsection{Suppose you have \$100,000 in capital. Your task is
+to:}\label{suppose-you-have-100000-in-capital.-your-task-is-to}}
+
+\begin{itemize}
+\item
+  Construct two different possibilities for an ETF-based portfolio, each
+  involving an allocation of your \$100,000 in capital to somewhere
+  between 3 and 10 different ETFs. You can find a big database of ETFs
+  here.
+\item
+  Download the last five years of daily data on your chosen ETFs, using
+  the functions in the quantmod package, as we used in class. Note: make
+  sure to choose ETFs for which at least five years of data are
+  available. There are tons of ETFs and some are quite new!
+\item
+  Use bootstrap resampling to estimate the 4-week (20 trading day) value
+  at risk of each of your three portfolios at the 5\% level.
+\item
+  Write a report summarizing your portfolios and your VaR findings.
+\end{itemize}
+
+\hypertarget{you-should-assume-that-your-portfolios-are-rebalanced-each-day-at-zero-transaction-cost.-for-example-if-youre-allocating-your-wealth-evenly-among-5-etfs-you-always-redistribute-your-wealth-at-the-end-of-each-day-so-that-the-equal-five-way-split-is-retained-regardless-of-that-days-appreciationdepreciation.}{%
+\subsubsection{You should assume that your portfolios are rebalanced
+each day at zero transaction cost. For example, if you're allocating
+your wealth evenly among 5 ETFs, you always redistribute your wealth at
+the end of each day so that the equal five-way split is retained,
+regardless of that day's
+appreciation/depreciation.}\label{you-should-assume-that-your-portfolios-are-rebalanced-each-day-at-zero-transaction-cost.-for-example-if-youre-allocating-your-wealth-evenly-among-5-etfs-you-always-redistribute-your-wealth-at-the-end-of-each-day-so-that-the-equal-five-way-split-is-retained-regardless-of-that-days-appreciationdepreciation.}}
+
+\hypertarget{notes}{%
+\subsubsection{Notes}\label{notes}}
+
+\begin{itemize}
+\item
+  Make sure the portfolios are different from each other! (Maybe one
+  seems safe, another aggressive, or something like that.) You're not
+  being graded on what specific portfolios you choose\ldots{} just
+  provide some context for your choices.
+\item
+  If you're unfamiliar with value at risk (VaR), you can refer to any
+  basic explanation of the idea, e.g.~here, here, or here.
+\item
+  For the first portfolio, I picked 5 random stocks from the database of
+  ETFs, thus giving me a diverse portfolio. I made sure for every stock
+  there were at least 5 years of data.
+\end{itemize}
+
+\begin{verbatim}
+##                ClCl.IWRa     ClCl.VNQa     ClCl.SPYa    ClCl.USOa   ClCl.GOVTa
+## 2016-08-03            NA            NA            NA           NA           NA
+## 2016-08-04  0.0004615438 -0.0040821051  0.0010639791  0.015479928  0.001909855
+## 2016-08-05  0.0075538923  0.0006647281  0.0081788687  0.002032469 -0.004574876
+## 2016-08-08 -0.0002861787  0.0017712388 -0.0005957925  0.024340848  0.000000000
+## 2016-08-09 -0.0009158920  0.0054150184  0.0005961477 -0.002970359  0.002680927
+## 2016-08-10 -0.0025212239 -0.0010992086 -0.0024749932 -0.029791386  0.001909855
+\end{verbatim}
+
+\begin{verbatim}
+##                ClCl.IWRa     ClCl.VNQa     ClCl.SPYa    ClCl.USOa   ClCl.GOVTa
+## 2016-08-04  0.0004615438 -0.0040821051  0.0010639791  0.015479928  0.001909855
+## 2016-08-05  0.0075538923  0.0006647281  0.0081788687  0.002032469 -0.004574876
+## 2016-08-08 -0.0002861787  0.0017712388 -0.0005957925  0.024340848  0.000000000
+## 2016-08-09 -0.0009158920  0.0054150184  0.0005961477 -0.002970359  0.002680927
+## 2016-08-10 -0.0025212239 -0.0010992086 -0.0024749932 -0.029791386  0.001909855
+## 2016-08-11  0.0053998392 -0.0113336161  0.0046406681  0.045035770 -0.003431224
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Understanding the return behavior of the stocks
+\end{itemize}
+
+\begin{verbatim}
+##      Index              ClCl.IWRa         
+##  Min.   :2016-08-03   Min.   :-0.1379755  
+##  1st Qu.:2018-02-05   1st Qu.:-0.0041810  
+##  Median :2019-08-08   Median : 0.0009807  
+##  Mean   :2019-08-08   Mean   : 0.0024485  
+##  3rd Qu.:2021-02-09   3rd Qu.: 0.0064269  
+##  Max.   :2022-08-12   Max.   : 2.9363938  
+##                       NA's   :1
+\end{verbatim}
+
+\begin{verbatim}
+##      Index              ClCl.VNQa         
+##  Min.   :2016-08-03   Min.   :-0.1772773  
+##  1st Qu.:2018-02-05   1st Qu.:-0.0052662  
+##  Median :2019-08-08   Median : 0.0009221  
+##  Mean   :2019-08-08   Mean   : 0.0003271  
+##  3rd Qu.:2021-02-09   3rd Qu.: 0.0067669  
+##  Max.   :2022-08-12   Max.   : 0.0899666  
+##                       NA's   :1
+\end{verbatim}
+
+\begin{verbatim}
+##      Index              ClCl.SPYa         
+##  Min.   :2016-08-03   Min.   :-0.1094237  
+##  1st Qu.:2018-02-05   1st Qu.:-0.0033009  
+##  Median :2019-08-08   Median : 0.0007051  
+##  Mean   :2019-08-08   Mean   : 0.0005914  
+##  3rd Qu.:2021-02-09   3rd Qu.: 0.0059158  
+##  Max.   :2022-08-12   Max.   : 0.0906033  
+##                       NA's   :1
+\end{verbatim}
+
+\begin{verbatim}
+##      Index              ClCl.USOa         
+##  Min.   :2016-08-03   Min.   :-0.8679578  
+##  1st Qu.:2018-02-05   1st Qu.:-0.0106857  
+##  Median :2019-08-08   Median : 0.0017182  
+##  Mean   :2019-08-08   Mean   :-0.0002811  
+##  3rd Qu.:2021-02-09   3rd Qu.: 0.0128586  
+##  Max.   :2022-08-12   Max.   : 0.1666667  
+##                       NA's   :1
+\end{verbatim}
+
+\begin{verbatim}
+##      Index              ClCl.GOVTa        
+##  Min.   :2016-08-03   Min.   :-0.0222462  
+##  1st Qu.:2018-02-05   1st Qu.:-0.0015854  
+##  Median :2019-08-08   Median : 0.0000000  
+##  Mean   :2019-08-08   Mean   : 0.0000121  
+##  3rd Qu.:2021-02-09   3rd Qu.: 0.0016083  
+##  Max.   :2022-08-12   Max.   : 0.0225758  
+##                       NA's   :1
+\end{verbatim}
+
+\textbf{Findings}
+
+\begin{itemize}
+\item
+  The returns obtained for the ETFs are in the following ranges:- IWR =
+  -13\% to 293\%, VNQ = -17\% to 9\%, SPY = -10\% to 9\%, USO = -86\% to
+  16\%, GOVT = -2\% to 2\%
+\item
+  Based on the summary statistics of the ETFs, we can infer that VNQ,
+  SPY and GOVT are in the safe category as their returns are in a
+  reasonable range.
+\item
+  Split considered for Safe portfolio is SPY:30\%, VNQ:35\% and
+  GOVT:35\%
+\item
+  We can infer that USO and IWR are high risk/return ETFs since they
+  have an extremely wide return range.
+\item
+  Split considered for aggressive portfolio is IWR:50\% and USO:50\%
+\item
+  Now simulate many different possible scenarios
+\end{itemize}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-18-1.pdf}
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-18-2.pdf}
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-18-3.pdf}
+
+\begin{verbatim}
+## [1] "Value at risk for even split :  7970.7"
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Value at risk for safe portfolio :  5104.88"
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Value at risk for aggressive portfolio :  13152.63"
+\end{verbatim}
+
+\textbf{Findings}
+
+\begin{itemize}
+\item
+  On seeing the above histogram graphs we observe the following:
+\item
+  for the evenly distributed portfolios the spread is quite uneven
+\item
+  for the safe portfolio a relatively even curve is observed
+\item
+  for the aggressive portfolio the there is a widespread.
+\item
+  The value at risk for the varios portfolios are as follows:
+\item
+  the safe portfolio is 5175.9 which is the least risky portfolio as the
+  name suggests
+\item
+  the aggressive portfolio has a VaR of 13549.54 which high
+\item
+  the evenly distributed portfolio is more or less the average of the
+  safe and aggressive portfolios
+\end{itemize}
+
+\newpage
+
+\#6. Clustering and PCA
+
+\hypertarget{principal-component-analysis}{%
+\subsection{Principal Component
+Analysis}\label{principal-component-analysis}}
+
+\begin{verbatim}
+## Importance of components:
+##                           PC1    PC2    PC3     PC4     PC5     PC6     PC7
+## Standard deviation     1.7407 1.5792 1.2475 0.98517 0.84845 0.77930 0.72330
+## Proportion of Variance 0.2754 0.2267 0.1415 0.08823 0.06544 0.05521 0.04756
+## Cumulative Proportion  0.2754 0.5021 0.6436 0.73187 0.79732 0.85253 0.90009
+##                            PC8     PC9   PC10    PC11
+## Standard deviation     0.70817 0.58054 0.4772 0.18119
+## Proportion of Variance 0.04559 0.03064 0.0207 0.00298
+## Cumulative Proportion  0.94568 0.97632 0.9970 1.00000
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-20-1.pdf}
+\caption{The above table shows the summary statistics for the PCA. It
+has total 11 principal components as there are 11 features in our
+dataset (not considering wine quality and wine color). It shows the
+Standard deviation, variance and cummulative proportion for each of the
+principal components. As we can see in the table, PC1 has 27\% of total
+variance, PC2 has about 23\% of total variance and so on. The same can
+also be seen in the Scree Plot. The sumary statistics show that we need
+five principal components to achieve a variance of about 85\%}
+\end{figure}
+
+\begin{center}\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-21-1} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  The plot shows the scores for the first two principal components. The
+  color of wine (Red wine or White wine) is used to color code the data
+  points as red and blue respectively. We can see that observations
+  belonging to red wine category tend to lie near each other and
+  observations belonging to the white wine category cluster together.
+\end{itemize}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\begin{itemize}
+\item
+  This plot shows the projections of the observations on the first two
+  principal components. The quality of wine is used to color code the
+  observations. As we can see, there is no evident clustering of the
+  data points based on the quality of wine.
+\item
+  In conclusion, PCA performs very well in clustering the observations
+  based on the wine color. It would not have been possible to visualize
+  the data without using a dimension reduction method such as PCA, since
+  based on the full data set there are approx 6500 possible scatter
+  plots, none of which would have been particularly informative.
+\item
+  However, it performs poorly in clustering them based on the quality of
+  wine.
+\end{itemize}
+
+\hypertarget{clustering}{%
+\subsection{Clustering}\label{clustering}}
+
+\hypertarget{using-k-means-clustering-instead-of-heirarchical-clustering-as-we-know-that-our-datset-has-two-types-of-wine.}{%
+\paragraph{Using K means clustering instead of heirarchical clustering
+as we know that our datset has two types of
+wine.}\label{using-k-means-clustering-instead-of-heirarchical-clustering-as-we-know-that-our-datset-has-two-types-of-wine.}}
+
+\begin{center}\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-23-1} \end{center}
+
+\begin{verbatim}
+##        cluster
+## color   red_hat white_hat
+##   red      1575        24
+##   white      68      4830
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 98.58396
+\end{verbatim}
+
+\begin{verbatim}
+## Accuracy of K-means clustering is: 98.58396
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  The confusion matrix shows how K-means clustering performed on our
+  data set in distinguishing red wine from white wine. The accuracy
+  turned out to be 98.58\% which is very good. We can conclude that
+  k-means clustering has done a very good job in clustering.
+\end{itemize}
+
+\nextpage
+
+\#7. Market Segmentation
+
+\nextpage
+
+\#8. The Reuters Corpus
+
+\hypertarget{revisit-the-reuters-c50-text-corpus-that-we-briefly-explored-in-class.-your-task-is-simple-tell-an-interesting-story-anchored-in-some-analytical-tools-we-have-learned-in-this-class-using-this-data.-for-example}{%
+\subsubsection{Revisit the Reuters C50 text corpus that we briefly
+explored in class. Your task is simple: tell an interesting story,
+anchored in some analytical tools we have learned in this class, using
+this data. For
+example:}\label{revisit-the-reuters-c50-text-corpus-that-we-briefly-explored-in-class.-your-task-is-simple-tell-an-interesting-story-anchored-in-some-analytical-tools-we-have-learned-in-this-class-using-this-data.-for-example}}
+
+\begin{itemize}
+\item
+  you could cluster authors or documents and tell a story about what you
+  find.
+\item
+  you could look for common factors using PCA.
+\item
+  you could train a predictive model and assess its accuracy. (Yes, this
+  is a supervised learning task, but it potentially draws on a lot of
+  what you know about unsupervised learning, since constructing features
+  for a document might involve dimensionality reduction.)
+\item
+  you could do anything else that strikes you as interesting with this
+  data.
+\end{itemize}
+
+\hypertarget{describe-clearly-what-question-you-are-trying-to-answer-what-models-you-are-using-how-you-pre-processed-the-data-and-so-forth.-make-sure-you-include-at-least-one-really-interesting-plot-although-more-than-one-might-be-necessary-depending-on-your-question-and-approach..}{%
+\subsubsection{Describe clearly what question you are trying to answer,
+what models you are using, how you pre-processed the data, and so forth.
+Make sure you include at least one really interesting plot (although
+more than one might be necessary, depending on your question and
+approach.).}\label{describe-clearly-what-question-you-are-trying-to-answer-what-models-you-are-using-how-you-pre-processed-the-data-and-so-forth.-make-sure-you-include-at-least-one-really-interesting-plot-although-more-than-one-might-be-necessary-depending-on-your-question-and-approach..}}
+
+\hypertarget{format-your-write-up-in-the-following-sections-some-of-which-might-be-quite-short}{%
+\subsubsection{Format your write-up in the following sections, some of
+which might be quite
+short:}\label{format-your-write-up-in-the-following-sections-some-of-which-might-be-quite-short}}
+
+\begin{itemize}
+\item
+  Question: What question(s) are you trying to answer?
+\item
+  Approach: What approach/statistical tool did you use to answer the
+  questions?
+\item
+  Results: What evidence/results did your approach provide to answer the
+  questions? (E.g. any numbers, tables, figures as appropriate.)
+\item
+  Conclusion: What are your conclusions about your questions? Provide a
+  written interpretation of your results, understandable to stakeholders
+  who might plausibly take an interest in this data set.
+\end{itemize}
+
+\hypertarget{regarding-the-data-itself-in-the-c50train-directory-you-have-50-articles-from-each-of-50-different-authors-one-author-per-directory.-then-in-the-c50test-directory-you-have-another-50-articles-from-each-of-those-same-50-authors-again-one-author-per-directory.-this-traintest-split-is-obviously-intended-for-building-predictive-models-but-to-repeat-you-need-not-do-that-on-this-problem.-you-can-tell-any-story-you-want-using-any-methods-you-want.-just-make-it-compelling}{%
+\subsubsection{Regarding the data itself: In the C50train directory, you
+have 50 articles from each of 50 different authors (one author per
+directory). Then in the C50test directory, you have another 50 articles
+from each of those same 50 authors (again, one author per directory).
+This train/test split is obviously intended for building predictive
+models, but to repeat, you need not do that on this problem. You can
+tell any story you want using any methods you want. Just make it
+compelling!}\label{regarding-the-data-itself-in-the-c50train-directory-you-have-50-articles-from-each-of-50-different-authors-one-author-per-directory.-then-in-the-c50test-directory-you-have-another-50-articles-from-each-of-those-same-50-authors-again-one-author-per-directory.-this-traintest-split-is-obviously-intended-for-building-predictive-models-but-to-repeat-you-need-not-do-that-on-this-problem.-you-can-tell-any-story-you-want-using-any-methods-you-want.-just-make-it-compelling}}
+
+\hypertarget{note-if-you-try-to-build-a-predictive-model-you-will-need-to-figure-out-a-way-to-deal-with-words-in-the-test-set-that-you-never-saw-in-the-training-set.-this-is-a-nontrivial-aspect-of-the-modeling-exercise.-e.g.-you-might-simply-ignore-those-new-words.}{%
+\subsubsection{Note: if you try to build a predictive model, you will
+need to figure out a way to deal with words in the test set that you
+never saw in the training set. This is a nontrivial aspect of the
+modeling exercise. (E.g. you might simply ignore those new
+words.)}\label{note-if-you-try-to-build-a-predictive-model-you-will-need-to-figure-out-a-way-to-deal-with-words-in-the-test-set-that-you-never-saw-in-the-training-set.-this-is-a-nontrivial-aspect-of-the-modeling-exercise.-e.g.-you-might-simply-ignore-those-new-words.}}
+
+\hypertarget{this-question-will-be-graded-according-to-three-criteria}{%
+\subsubsection{This question will be graded according to three
+criteria:}\label{this-question-will-be-graded-according-to-three-criteria}}
+
+\begin{itemize}
+\item
+  the overall ``interesting-ness'' of your question and analysis.
+\item
+  the clarity of your description. We will be asking ourselves: could
+  your analysis be reproduced by a competent data scientist based on
+  what you've said? (That's good.) Or would that person have to wade
+  into the code in order to understand what, precisely, you've done?
+  (That's bad.)
+\item
+  technical correctness (i.e.~did you make any mistakes in execution or
+  interpretation?)
+\end{itemize}
+
+** Pre-processing data: **
+
+\begin{itemize}
+\item
+  We take all the files to be used for training and store their names in
+  `file\_list'
+\item
+  Our data does not have the column name for the Author name, so to
+  extract it we will be using the file name
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Function to split the path name by \textquotesingle{}/\textquotesingle{}}
+\NormalTok{extract\_author }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+  \FunctionTok{strsplit}\NormalTok{(x, }\StringTok{"/"}\NormalTok{)}
+\NormalTok{\}}
+
+\CommentTok{\#Make a dataframe with the author names of each document}
+\NormalTok{df }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(}\FunctionTok{extract\_author}\NormalTok{(file\_list), }\ControlFlowTok{function}\NormalTok{(x) x[}\FunctionTok{length}\NormalTok{(x) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{] ))}
+\NormalTok{author }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(df)}
+\FunctionTok{rownames}\NormalTok{(author)}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2500}\NormalTok{)}
+\CommentTok{\#author}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  We will then clean up the file name using piping operator from
+  magrittr
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mynames }\OtherTok{=}\NormalTok{ file\_list }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  \{ }\FunctionTok{strsplit}\NormalTok{(., }\StringTok{\textquotesingle{}/\textquotesingle{}}\NormalTok{, }\AttributeTok{fixed=}\ConstantTok{TRUE}\NormalTok{) \} }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  \{ }\FunctionTok{lapply}\NormalTok{(., tail, }\AttributeTok{n=}\DecValTok{2}\NormalTok{) \} }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  \{ }\FunctionTok{lapply}\NormalTok{(., paste0, }\AttributeTok{collapse =} \StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{) \} }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  unlist}
+
+\CommentTok{\# Rename the articles}
+\CommentTok{\#mynames}
+\FunctionTok{names}\NormalTok{(raw.data) }\OtherTok{=}\NormalTok{ mynames}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  Some pre-processing/tokenization steps uses tm\_map which maps some
+  function to every document in the corpus
+\item
+  Using this we make everything lowercase, remove numbers, punctuations,
+  excess white spaces and stopwords
+\item
+  Creating a doc-term-matrix
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DTM\_raw }\OtherTok{=} \FunctionTok{DocumentTermMatrix}\NormalTok{(my\_documents)}
+\NormalTok{DTM\_raw }\CommentTok{\# some basic summary statistics}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 22479)>>
+## Non-/sparse entries: 496196/55701304
+## Sparsity           : 99%
+## Maximal term length: 80
+## Weighting          : term frequency (tf)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(DTM\_raw)  }\CommentTok{\# a special kind of sparse matrix format}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "DocumentTermMatrix"    "simple_triplet_matrix"
+\end{verbatim}
+
+\begin{itemize}
+\item
+  The final step in pre-processing is to drop those terms that only
+  occur in one or two documents. This is done to remove rare terms from
+  which there is nothing to learn from
+\item
+  To do this we remove those terms that have count 0 in \textgreater97\%
+  of docs.
+\end{itemize}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 1264)>>
+## Non-/sparse entries: 360611/2799389
+## Sparsity           : 89%
+## Maximal term length: 13
+## Weighting          : term frequency (tf)
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Constructing TF IDF weights
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# construct TF IDF weights}
+\NormalTok{tfidf\_raw }\OtherTok{=} \FunctionTok{weightTfIdf}\NormalTok{(DTM\_raw)}
+\NormalTok{tfidf\_raw}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 1264)>>
+## Non-/sparse entries: 320611/2839389
+## Sparsity           : 90%
+## Maximal term length: 13
+## Weighting          : term frequency - inverse document frequency (normalized) (tf-idf)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train.data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{as.matrix}\NormalTok{(tfidf\_raw), }\AttributeTok{stringsAsFactors=}\ConstantTok{FALSE}\NormalTok{)}
+\CommentTok{\#Merge with author names}
+\NormalTok{train.data }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(train.data,author,}\AttributeTok{by =}\DecValTok{0}\NormalTok{)}
+\NormalTok{train.data}\SpecialCharTok{$}\NormalTok{V1 }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(train.data}\SpecialCharTok{$}\NormalTok{V1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  We repeat the above steps to obtain the test data
+\end{itemize}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 22987)>>
+## Non-/sparse entries: 502733/56964767
+## Sparsity           : 99%
+## Maximal term length: 79
+## Weighting          : term frequency (tf)
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "DocumentTermMatrix"    "simple_triplet_matrix"
+\end{verbatim}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 1296)>>
+## Non-/sparse entries: 366936/2873064
+## Sparsity           : 89%
+## Maximal term length: 13
+## Weighting          : term frequency (tf)
+\end{verbatim}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2500, terms: 1296)>>
+## Non-/sparse entries: 326936/2913064
+## Sparsity           : 90%
+## Maximal term length: 13
+## Weighting          : term frequency - inverse document frequency (normalized) (tf-idf)
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  We ignore words in the test set that are not present in the train set
+\end{itemize}
+
+** Running Random Forest on the Train Data **
+
+\begin{verbatim}
+## 
+## Call:
+##  randomForest(formula = new_train$V1 ~ ., data = new_train, ntree = 37,      proximity = T) 
+##                Type of random forest: classification
+##                      Number of trees: 37
+## No. of variables tried at each split: 34
+## 
+##         OOB estimate of  error rate: 26.52%
+## Confusion matrix:
+##                   AaronPressman AlanCrosby AlexanderSmith BenjaminKangLim
+## AaronPressman                39          0              0               0
+## AlanCrosby                    0         40              0               0
+## AlexanderSmith                0          0             29               0
+## BenjaminKangLim               1          0              0              31
+## BernardHickey                 1          0              0               0
+## BradDorfman                   1          1              0               0
+## DarrenSchuettler              0          0              0               0
+## DavidLawder                   0          0              0               0
+## EdnaFernandes                 0          0              0               0
+## EricAuchard                   1          1              1               0
+## FumikoFujisaki                1          0              0               0
+## GrahamEarnshaw                0          0              0               0
+## HeatherScoffield              0          0              0               0
+## JaneMacartney                 0          0              0               3
+## JanLopatka                    0          4              0               0
+## JimGilchrist                  0          0              0               0
+## JoeOrtiz                      0          0              2               0
+## JohnMastrini                  0          4              0               0
+## JonathanBirt                  0          0              0               0
+## JoWinterbottom                0          0              0               0
+## KarlPenhaul                   0          0              1               0
+## KeithWeir                     0          0              0               0
+## KevinDrawbaugh                0          0              0               0
+## KevinMorrison                 0          0              0               0
+## KirstinRidley                 0          0              2               0
+## KouroshKarimkhany             0          0              0               0
+## LydiaZajc                     0          0              0               0
+## LynneO'Donnell                0          0              0               0
+## LynnleyBrowning               0          0              0               0
+## MarcelMichelson               0          0              0               0
+## MarkBendeich                  0          0              1               0
+## MartinWolk                    0          0              0               0
+## MatthewBunce                  0          0              0               0
+## MichaelConnor                 0          0              0               0
+## MureDickie                    0          0              0              10
+## NickLouth                     0          0              0               0
+## PatriciaCommins               0          0              0               0
+## PeterHumphrey                 0          0              0               1
+## PierreTran                    0          0              1               0
+## RobinSidel                    1          0              0               0
+## RogerFillion                  1          0              0               0
+## SamuelPerry                   5          0              0               0
+## SarahDavison                  1          0              1               1
+## ScottHillis                   0          0              0              11
+## SimonCowell                   2          0              1               0
+## TanEeLyn                      0          0              0               0
+## TheresePoletti                1          0              0               0
+## TimFarrand                    0          0              2               0
+## ToddNissen                    0          0              0               0
+## WilliamKazer                  0          0              0               2
+##                   BernardHickey BradDorfman DarrenSchuettler DavidLawder
+## AaronPressman                 0           0                0           0
+## AlanCrosby                    0           0                0           0
+## AlexanderSmith                2           0                0           0
+## BenjaminKangLim               0           0                0           0
+## BernardHickey                34           0                0           1
+## BradDorfman                   0          26                1           1
+## DarrenSchuettler              0           0               44           0
+## DavidLawder                   0           0                0          46
+## EdnaFernandes                 1           0                0           1
+## EricAuchard                   0           0                0           0
+## FumikoFujisaki                0           0                0           0
+## GrahamEarnshaw                0           0                0           0
+## HeatherScoffield              0           1                1           0
+## JaneMacartney                 0           0                0           0
+## JanLopatka                    0           0                0           0
+## JimGilchrist                  0           0                0           0
+## JoeOrtiz                      0           0                0           0
+## JohnMastrini                  0           0                0           0
+## JonathanBirt                  0           0                0           0
+## JoWinterbottom                0           0                0           0
+## KarlPenhaul                   0           0                0           0
+## KeithWeir                     0           0                0           0
+## KevinDrawbaugh                0           1                1           0
+## KevinMorrison                 6           0                0           0
+## KirstinRidley                 0           0                0           0
+## KouroshKarimkhany             0           0                0           0
+## LydiaZajc                     0           0                7           0
+## LynneO'Donnell                0           0                0           0
+## LynnleyBrowning               0           0                0           0
+## MarcelMichelson               0           0                0           0
+## MarkBendeich                  6           0                0           0
+## MartinWolk                    1           1                0           0
+## MatthewBunce                  0           0                0           0
+## MichaelConnor                 2           4                0           0
+## MureDickie                    0           0                0           0
+## NickLouth                     1           0                0           0
+## PatriciaCommins               0           8                0           0
+## PeterHumphrey                 0           0                1           0
+## PierreTran                    0           0                0           1
+## RobinSidel                    0           0                0           0
+## RogerFillion                  0           0                1           0
+## SamuelPerry                   0           1                0           0
+## SarahDavison                  0           0                1           0
+## ScottHillis                   0           0                0           0
+## SimonCowell                   0           1                0           0
+## TanEeLyn                      0           0                0           0
+## TheresePoletti                0           1                0           0
+## TimFarrand                    1           0                0           0
+## ToddNissen                    0           1                1           3
+## WilliamKazer                  0           0                0           1
+##                   EdnaFernandes EricAuchard FumikoFujisaki GrahamEarnshaw
+## AaronPressman                 0           0              1              0
+## AlanCrosby                    0           0              0              0
+## AlexanderSmith                0           0              1              0
+## BenjaminKangLim               0           0              0              0
+## BernardHickey                 1           1              0              0
+## BradDorfman                   0           1              0              0
+## DarrenSchuettler              0           0              0              0
+## DavidLawder                   0           0              0              0
+## EdnaFernandes                32           0              0              0
+## EricAuchard                   0          28              0              0
+## FumikoFujisaki                0           0             47              0
+## GrahamEarnshaw                0           0              0             41
+## HeatherScoffield              0           0              0              0
+## JaneMacartney                 0           0              0              3
+## JanLopatka                    0           0              0              0
+## JimGilchrist                  0           0              0              0
+## JoeOrtiz                      2           0              0              0
+## JohnMastrini                  0           0              0              0
+## JonathanBirt                  4           0              0              0
+## JoWinterbottom                2           0              0              0
+## KarlPenhaul                   0           0              0              0
+## KeithWeir                     2           0              0              0
+## KevinDrawbaugh                0           1              0              0
+## KevinMorrison                 0           0              0              0
+## KirstinRidley                 0           0              1              0
+## KouroshKarimkhany             0           2              0              0
+## LydiaZajc                     0           0              0              0
+## LynneO'Donnell                0           0              0              0
+## LynnleyBrowning               0           0              0              0
+## MarcelMichelson               0           0              1              0
+## MarkBendeich                  0           0              0              0
+## MartinWolk                    0           0              1              0
+## MatthewBunce                  0           0              0              0
+## MichaelConnor                 1           0              0              0
+## MureDickie                    0           0              0              1
+## NickLouth                     0           1              0              0
+## PatriciaCommins               1           2              1              0
+## PeterHumphrey                 0           0              0              0
+## PierreTran                    0           0              1              0
+## RobinSidel                    1           4              0              0
+## RogerFillion                  0           0              0              0
+## SamuelPerry                   0           3              0              0
+## SarahDavison                  0           0              2              1
+## ScottHillis                   1           0              0              0
+## SimonCowell                   1           0              0              0
+## TanEeLyn                      1           0              0              1
+## TheresePoletti                0           4              0              0
+## TimFarrand                    3           0              1              0
+## ToddNissen                    0           0              0              0
+## WilliamKazer                  0           0              0              3
+##                   HeatherScoffield JaneMacartney JanLopatka JimGilchrist
+## AaronPressman                    0             0          0            0
+## AlanCrosby                       0             0          5            0
+## AlexanderSmith                   0             0          0            0
+## BenjaminKangLim                  0             4          0            1
+## BernardHickey                    1             0          0            1
+## BradDorfman                      0             0          0            0
+## DarrenSchuettler                 0             0          0            0
+## DavidLawder                      0             0          0            0
+## EdnaFernandes                    0             0          0            1
+## EricAuchard                      0             0          0            0
+## FumikoFujisaki                   0             0          0            0
+## GrahamEarnshaw                   0             2          0            0
+## HeatherScoffield                45             0          0            0
+## JaneMacartney                    0            27          0            0
+## JanLopatka                       0             0         43            0
+## JimGilchrist                     0             0          0           49
+## JoeOrtiz                         0             0          0            0
+## JohnMastrini                     0             0          6            0
+## JonathanBirt                     0             0          0            0
+## JoWinterbottom                   0             0          0            0
+## KarlPenhaul                      0             0          0            0
+## KeithWeir                        0             0          0            0
+## KevinDrawbaugh                   0             0          0            0
+## KevinMorrison                    1             0          0            2
+## KirstinRidley                    0             0          0            0
+## KouroshKarimkhany                0             0          0            0
+## LydiaZajc                        1             0          0            0
+## LynneO'Donnell                   0             0          0            0
+## LynnleyBrowning                  1             0          0            0
+## MarcelMichelson                  0             0          0            0
+## MarkBendeich                     1             0          0            0
+## MartinWolk                       1             0          0            0
+## MatthewBunce                     0             0          1            0
+## MichaelConnor                    0             0          0            0
+## MureDickie                       0             2          0            0
+## NickLouth                        0             0          0            0
+## PatriciaCommins                  0             0          0            0
+## PeterHumphrey                    0             0          0            0
+## PierreTran                       0             0          0            0
+## RobinSidel                       0             0          0            0
+## RogerFillion                     0             0          0            0
+## SamuelPerry                      0             0          0            0
+## SarahDavison                     0             0          0            1
+## ScottHillis                      0             5          0            0
+## SimonCowell                      0             0          1            0
+## TanEeLyn                         0             0          0            2
+## TheresePoletti                   0             0          0            0
+## TimFarrand                       0             0          0            0
+## ToddNissen                       0             0          0            0
+## WilliamKazer                     0             6          0            0
+##                   JoeOrtiz JohnMastrini JonathanBirt JoWinterbottom KarlPenhaul
+## AaronPressman            0            0            0              0           0
+## AlanCrosby               0            4            1              0           0
+## AlexanderSmith           2            0            0              3           0
+## BenjaminKangLim          0            0            0              0           0
+## BernardHickey            0            0            0              0           0
+## BradDorfman              0            0            0              0           1
+## DarrenSchuettler         0            0            0              0           0
+## DavidLawder              0            0            0              0           0
+## EdnaFernandes            0            0            0              2           0
+## EricAuchard              0            0            0              0           0
+## FumikoFujisaki           0            0            0              0           1
+## GrahamEarnshaw           0            0            0              0           0
+## HeatherScoffield         0            0            0              0           0
+## JaneMacartney            0            0            0              0           0
+## JanLopatka               0            3            0              0           0
+## JimGilchrist             0            0            0              0           0
+## JoeOrtiz                35            0            0              4           0
+## JohnMastrini             0           40            0              0           0
+## JonathanBirt             1            0           43              1           0
+## JoWinterbottom           3            0            0             44           0
+## KarlPenhaul              0            0            0              0          44
+## KeithWeir                0            0            0              0           2
+## KevinDrawbaugh           0            0            1              0           1
+## KevinMorrison            0            0            0              0           0
+## KirstinRidley            1            0            1              2           1
+## KouroshKarimkhany        0            0            0              0           0
+## LydiaZajc                0            0            0              0           0
+## LynneO'Donnell           0            0            0              0           0
+## LynnleyBrowning          0            0            0              0           0
+## MarcelMichelson          0            0            1              0           0
+## MarkBendeich             0            0            0              0           1
+## MartinWolk               0            0            1              0           1
+## MatthewBunce             0            0            0              0           3
+## MichaelConnor            0            0            0              0           0
+## MureDickie               0            0            0              0           0
+## NickLouth                0            0            0              0           0
+## PatriciaCommins          0            0            0              0           0
+## PeterHumphrey            0            0            0              0           0
+## PierreTran               1            0            0              0           0
+## RobinSidel               0            0            0              0           0
+## RogerFillion             0            0            0              0           0
+## SamuelPerry              0            0            0              0           0
+## SarahDavison             0            0            1              0           0
+## ScottHillis              0            0            0              0           0
+## SimonCowell              2            0            0              0           0
+## TanEeLyn                 0            1            0              0           0
+## TheresePoletti           0            0            0              0           0
+## TimFarrand               2            0            1              2           0
+## ToddNissen               0            0            0              0           0
+## WilliamKazer             0            0            0              0           0
+##                   KeithWeir KevinDrawbaugh KevinMorrison KirstinRidley
+## AaronPressman             0              0             0             0
+## AlanCrosby                0              0             0             0
+## AlexanderSmith            3              0             0             3
+## BenjaminKangLim           0              0             0             0
+## BernardHickey             0              0             3             0
+## BradDorfman               0              5             0             0
+## DarrenSchuettler          0              0             0             0
+## DavidLawder               0              0             0             0
+## EdnaFernandes             0              0             1             2
+## EricAuchard               0              0             0             0
+## FumikoFujisaki            0              0             0             0
+## GrahamEarnshaw            0              0             0             0
+## HeatherScoffield          0              0             0             0
+## JaneMacartney             0              0             0             0
+## JanLopatka                0              0             0             0
+## JimGilchrist              0              0             0             0
+## JoeOrtiz                  1              0             0             0
+## JohnMastrini              0              0             0             0
+## JonathanBirt              0              0             0             0
+## JoWinterbottom            0              0             0             0
+## KarlPenhaul               0              0             0             0
+## KeithWeir                40              0             1             1
+## KevinDrawbaugh            1             35             2             0
+## KevinMorrison             0              1            37             0
+## KirstinRidley             3              0             0            30
+## KouroshKarimkhany         0              0             0             0
+## LydiaZajc                 0              0             0             0
+## LynneO'Donnell            0              0             0             0
+## LynnleyBrowning           0              0             0             0
+## MarcelMichelson           0              0             0             0
+## MarkBendeich              0              0             3             0
+## MartinWolk                0              1             0             1
+## MatthewBunce              1              0             0             0
+## MichaelConnor             0              1             1             0
+## MureDickie                0              0             0             0
+## NickLouth                 0              0             0             1
+## PatriciaCommins           0              3             0             0
+## PeterHumphrey             0              0             0             0
+## PierreTran                0              0             0             1
+## RobinSidel                0              3             0             0
+## RogerFillion              0              0             0             0
+## SamuelPerry               0              0             0             0
+## SarahDavison              0              0             0             0
+## ScottHillis               0              0             0             0
+## SimonCowell               0              0             0             0
+## TanEeLyn                  0              0             0             0
+## TheresePoletti            0              0             0             0
+## TimFarrand                1              0             0             2
+## ToddNissen                0              0             0             0
+## WilliamKazer              0              0             0             1
+##                   KouroshKarimkhany LydiaZajc LynneO'Donnell LynnleyBrowning
+## AaronPressman                     1         0              0               0
+## AlanCrosby                        0         0              0               0
+## AlexanderSmith                    0         0              0               0
+## BenjaminKangLim                   0         0              1               0
+## BernardHickey                     0         0              0               0
+## BradDorfman                       0         0              0               0
+## DarrenSchuettler                  0         4              0               0
+## DavidLawder                       0         0              0               0
+## EdnaFernandes                     0         0              0               0
+## EricAuchard                       0         1              0               0
+## FumikoFujisaki                    0         0              0               0
+## GrahamEarnshaw                    0         0              0               0
+## HeatherScoffield                  0         2              0               0
+## JaneMacartney                     0         0              1               0
+## JanLopatka                        0         0              0               0
+## JimGilchrist                      0         0              1               0
+## JoeOrtiz                          0         0              0               0
+## JohnMastrini                      0         0              0               0
+## JonathanBirt                      0         0              0               0
+## JoWinterbottom                    0         0              0               0
+## KarlPenhaul                       0         0              0               2
+## KeithWeir                         0         0              0               0
+## KevinDrawbaugh                    1         1              0               0
+## KevinMorrison                     0         0              0               0
+## KirstinRidley                     1         0              0               0
+## KouroshKarimkhany                45         0              0               0
+## LydiaZajc                         0        42              0               0
+## LynneO'Donnell                    0         0             49               0
+## LynnleyBrowning                   0         0              0              48
+## MarcelMichelson                   0         0              0               0
+## MarkBendeich                      0         0              0               0
+## MartinWolk                        3         0              0               0
+## MatthewBunce                      0         0              0               2
+## MichaelConnor                     0         0              0               2
+## MureDickie                        0         0              1               0
+## NickLouth                         0         0              0               0
+## PatriciaCommins                   0         0              0               0
+## PeterHumphrey                     0         0              0               0
+## PierreTran                        0         0              0               1
+## RobinSidel                        0         0              0               0
+## RogerFillion                      0         0              0               0
+## SamuelPerry                       2         1              0               0
+## SarahDavison                      0         0              0               0
+## ScottHillis                       0         0              0               0
+## SimonCowell                       0         0              0               0
+## TanEeLyn                          0         0              3               0
+## TheresePoletti                    4         0              0               0
+## TimFarrand                        0         0              0               0
+## ToddNissen                        0         0              0               0
+## WilliamKazer                      0         0              3               0
+##                   MarcelMichelson MarkBendeich MartinWolk MatthewBunce
+## AaronPressman                   0            0          1            0
+## AlanCrosby                      0            0          0            0
+## AlexanderSmith                  0            0          0            0
+## BenjaminKangLim                 0            0          0            0
+## BernardHickey                   0            4          1            0
+## BradDorfman                     0            0          1            0
+## DarrenSchuettler                0            0          0            0
+## DavidLawder                     0            0          0            0
+## EdnaFernandes                   1            1          0            0
+## EricAuchard                     0            0          1            0
+## FumikoFujisaki                  0            0          0            0
+## GrahamEarnshaw                  0            0          0            0
+## HeatherScoffield                0            0          0            0
+## JaneMacartney                   0            0          0            0
+## JanLopatka                      0            0          0            0
+## JimGilchrist                    0            0          0            0
+## JoeOrtiz                        0            0          0            0
+## JohnMastrini                    0            0          0            0
+## JonathanBirt                    0            0          0            0
+## JoWinterbottom                  0            0          0            0
+## KarlPenhaul                     0            0          0            1
+## KeithWeir                       1            0          0            1
+## KevinDrawbaugh                  0            0          0            0
+## KevinMorrison                   0            2          0            0
+## KirstinRidley                   0            1          1            0
+## KouroshKarimkhany               0            0          0            0
+## LydiaZajc                       0            0          0            0
+## LynneO'Donnell                  0            0          0            0
+## LynnleyBrowning                 0            0          0            1
+## MarcelMichelson                43            0          1            0
+## MarkBendeich                    0           35          0            0
+## MartinWolk                      0            1         33            0
+## MatthewBunce                    0            0          0           40
+## MichaelConnor                   0            1          1            0
+## MureDickie                      0            1          0            0
+## NickLouth                       0            0          0            0
+## PatriciaCommins                 0            0          1            0
+## PeterHumphrey                   0            0          0            0
+## PierreTran                      6            0          0            1
+## RobinSidel                      0            0          1            0
+## RogerFillion                    0            0          0            0
+## SamuelPerry                     0            0          1            0
+## SarahDavison                    0            0          0            0
+## ScottHillis                     0            0          0            1
+## SimonCowell                     0            1          0            0
+## TanEeLyn                        0            1          0            0
+## TheresePoletti                  0            0          1            0
+## TimFarrand                      0            3          0            0
+## ToddNissen                      0            0          0            1
+## WilliamKazer                    0            0          0            0
+##                   MichaelConnor MureDickie NickLouth PatriciaCommins
+## AaronPressman                 0          0         1               0
+## AlanCrosby                    0          0         0               0
+## AlexanderSmith                0          0         0               1
+## BenjaminKangLim               1          7         0               0
+## BernardHickey                 1          0         0               1
+## BradDorfman                   3          0         0               2
+## DarrenSchuettler              0          0         0               0
+## DavidLawder                   0          0         0               0
+## EdnaFernandes                 0          0         0               0
+## EricAuchard                   1          0         4               1
+## FumikoFujisaki                0          0         0               0
+## GrahamEarnshaw                0          1         0               0
+## HeatherScoffield              0          0         0               0
+## JaneMacartney                 0          1         0               0
+## JanLopatka                    0          0         0               0
+## JimGilchrist                  0          0         0               0
+## JoeOrtiz                      0          0         0               0
+## JohnMastrini                  0          0         0               0
+## JonathanBirt                  0          0         0               0
+## JoWinterbottom                0          0         0               0
+## KarlPenhaul                   0          1         0               0
+## KeithWeir                     0          0         1               0
+## KevinDrawbaugh                0          0         0               2
+## KevinMorrison                 0          0         0               0
+## KirstinRidley                 1          1         1               0
+## KouroshKarimkhany             0          0         0               0
+## LydiaZajc                     0          0         0               0
+## LynneO'Donnell                0          0         0               0
+## LynnleyBrowning               0          0         0               0
+## MarcelMichelson               0          0         0               0
+## MarkBendeich                  0          1         0               0
+## MartinWolk                    1          0         0               0
+## MatthewBunce                  0          0         0               0
+## MichaelConnor                31          0         1               1
+## MureDickie                    0         25         1               0
+## NickLouth                     1          0        42               0
+## PatriciaCommins               0          0         0              25
+## PeterHumphrey                 0          1         0               0
+## PierreTran                    0          0         0               0
+## RobinSidel                    0          0         0               1
+## RogerFillion                  0          0         0               0
+## SamuelPerry                   1          0         1               1
+## SarahDavison                  0          1         0               0
+## ScottHillis                   1          4         0               0
+## SimonCowell                   1          0         0               0
+## TanEeLyn                      0          0         0               0
+## TheresePoletti                0          0         3               1
+## TimFarrand                    0          0         0               0
+## ToddNissen                    0          0         0               1
+## WilliamKazer                  0          2         0               0
+##                   PeterHumphrey PierreTran RobinSidel RogerFillion SamuelPerry
+## AaronPressman                 0          0          1            0           3
+## AlanCrosby                    0          0          0            0           0
+## AlexanderSmith                0          0          0            0           0
+## BenjaminKangLim               1          0          0            0           0
+## BernardHickey                 0          0          0            0           0
+## BradDorfman                   0          0          1            0           1
+## DarrenSchuettler              0          0          1            0           0
+## DavidLawder                   0          0          0            0           0
+## EdnaFernandes                 0          3          0            0           0
+## EricAuchard                   0          0          0            0           3
+## FumikoFujisaki                0          0          1            0           0
+## GrahamEarnshaw                0          0          0            0           0
+## HeatherScoffield              0          0          1            0           0
+## JaneMacartney                 0          0          0            0           0
+## JanLopatka                    0          0          0            0           0
+## JimGilchrist                  0          0          0            0           0
+## JoeOrtiz                      0          1          0            0           0
+## JohnMastrini                  0          0          0            0           0
+## JonathanBirt                  0          0          0            0           0
+## JoWinterbottom                0          0          0            0           0
+## KarlPenhaul                   0          0          0            1           0
+## KeithWeir                     0          0          0            0           0
+## KevinDrawbaugh                0          0          1            0           0
+## KevinMorrison                 0          0          0            0           0
+## KirstinRidley                 0          0          0            0           0
+## KouroshKarimkhany             0          0          0            0           2
+## LydiaZajc                     0          0          0            0           0
+## LynneO'Donnell                1          0          0            0           0
+## LynnleyBrowning               0          0          0            0           0
+## MarcelMichelson               0          4          0            0           0
+## MarkBendeich                  0          0          0            0           0
+## MartinWolk                    0          1          0            0           2
+## MatthewBunce                  0          2          0            0           0
+## MichaelConnor                 0          0          1            1           0
+## MureDickie                    3          0          0            0           1
+## NickLouth                     0          0          0            2           2
+## PatriciaCommins               0          1          4            1           1
+## PeterHumphrey                46          0          0            0           0
+## PierreTran                    0         37          0            0           0
+## RobinSidel                    0          0         38            0           0
+## RogerFillion                  0          0          1           47           0
+## SamuelPerry                   0          0          0            0          27
+## SarahDavison                  6          0          0            0           0
+## ScottHillis                   0          0          0            0           0
+## SimonCowell                   0          1          1            0           0
+## TanEeLyn                      8          0          0            0           0
+## TheresePoletti                0          0          0            0           8
+## TimFarrand                    0          0          0            0           0
+## ToddNissen                    0          0          1            0           0
+## WilliamKazer                  0          0          0            0           0
+##                   SarahDavison ScottHillis SimonCowell TanEeLyn TheresePoletti
+## AaronPressman                0           0           0        0              2
+## AlanCrosby                   0           0           0        0              0
+## AlexanderSmith               1           0           3        0              0
+## BenjaminKangLim              0           2           0        1              0
+## BernardHickey                0           0           0        0              0
+## BradDorfman                  0           0           1        0              0
+## DarrenSchuettler             0           1           0        0              0
+## DavidLawder                  0           0           0        0              0
+## EdnaFernandes                0           0           2        0              0
+## EricAuchard                  0           0           1        0              7
+## FumikoFujisaki               0           0           0        0              0
+## GrahamEarnshaw               2           0           0        0              0
+## HeatherScoffield             0           0           0        0              0
+## JaneMacartney                1           5           0        2              0
+## JanLopatka                   0           0           0        0              0
+## JimGilchrist                 0           0           0        0              0
+## JoeOrtiz                     0           0           3        1              0
+## JohnMastrini                 0           0           0        0              0
+## JonathanBirt                 0           0           1        0              0
+## JoWinterbottom               0           0           0        0              0
+## KarlPenhaul                  0           0           0        0              0
+## KeithWeir                    0           0           1        0              0
+## KevinDrawbaugh               0           0           1        0              0
+## KevinMorrison                1           0           0        0              0
+## KirstinRidley                0           0           2        0              0
+## KouroshKarimkhany            0           0           0        0              1
+## LydiaZajc                    0           0           0        0              0
+## LynneO'Donnell               0           0           0        0              0
+## LynnleyBrowning              0           0           0        0              0
+## MarcelMichelson              0           0           0        0              0
+## MarkBendeich                 1           0           0        0              0
+## MartinWolk                   0           0           0        0              1
+## MatthewBunce                 0           0           0        1              0
+## MichaelConnor                0           0           0        0              0
+## MureDickie                   0           2           0        0              0
+## NickLouth                    0           0           0        0              0
+## PatriciaCommins              0           0           0        0              1
+## PeterHumphrey                0           0           0        1              0
+## PierreTran                   0           0           0        0              0
+## RobinSidel                   0           0           0        0              0
+## RogerFillion                 0           0           0        0              0
+## SamuelPerry                  0           0           0        0              5
+## SarahDavison                32           1           0        1              0
+## ScottHillis                  0          19           0        2              0
+## SimonCowell                  0           0          35        0              0
+## TanEeLyn                     0           1           0       31              0
+## TheresePoletti               0           0           0        0             27
+## TimFarrand                   0           0           2        0              0
+## ToddNissen                   0           0           0        0              1
+## WilliamKazer                 1           9           0        2              0
+##                   TimFarrand ToddNissen WilliamKazer class.error
+## AaronPressman              0          1            0        0.22
+## AlanCrosby                 0          0            0        0.20
+## AlexanderSmith             1          1            0        0.42
+## BenjaminKangLim            0          0            0        0.38
+## BernardHickey              0          0            0        0.32
+## BradDorfman                0          4            0        0.48
+## DarrenSchuettler           0          0            0        0.12
+## DavidLawder                0          4            0        0.08
+## EdnaFernandes              3          0            0        0.36
+## EricAuchard                0          0            0        0.44
+## FumikoFujisaki             0          0            0        0.06
+## GrahamEarnshaw             0          0            4        0.18
+## HeatherScoffield           0          0            0        0.10
+## JaneMacartney              0          1            6        0.46
+## JanLopatka                 0          0            0        0.14
+## JimGilchrist               0          0            0        0.02
+## JoeOrtiz                   0          0            1        0.30
+## JohnMastrini               0          0            0        0.20
+## JonathanBirt               0          0            0        0.14
+## JoWinterbottom             1          0            0        0.12
+## KarlPenhaul                0          0            0        0.12
+## KeithWeir                  0          0            0        0.20
+## KevinDrawbaugh             0          1            0        0.30
+## KevinMorrison              0          0            0        0.26
+## KirstinRidley              1          0            0        0.40
+## KouroshKarimkhany          0          0            0        0.10
+## LydiaZajc                  0          0            0        0.16
+## LynneO'Donnell             0          0            0        0.02
+## LynnleyBrowning            0          0            0        0.04
+## MarcelMichelson            0          0            0        0.14
+## MarkBendeich               1          0            0        0.30
+## MartinWolk                 0          0            0        0.34
+## MatthewBunce               0          0            0        0.20
+## MichaelConnor              1          1            0        0.38
+## MureDickie                 0          0            3        0.50
+## NickLouth                  0          0            0        0.16
+## PatriciaCommins            0          1            0        0.50
+## PeterHumphrey              0          0            0        0.08
+## PierreTran                 0          0            0        0.26
+## RobinSidel                 0          1            0        0.24
+## RogerFillion               0          0            0        0.06
+## SamuelPerry                2          0            0        0.46
+## SarahDavison               0          0            0        0.36
+## ScottHillis                0          0            6        0.62
+## SimonCowell                3          0            0        0.30
+## TanEeLyn                   0          0            1        0.38
+## TheresePoletti             0          0            0        0.46
+## TimFarrand                30          0            0        0.40
+## ToddNissen                 0         41            0        0.18
+## WilliamKazer               0          0           20        0.60
+\end{verbatim}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+** Running the model on the Test Data **
+
+\begin{verbatim}
+## [1] 0.672
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Trying different values of top features to see if performance
+  improves.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{importanceOrder}\OtherTok{=}\FunctionTok{order}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{train\_rf}\SpecialCharTok{$}\NormalTok{importance)}
+\NormalTok{topnames}\OtherTok{=}\FunctionTok{rownames}\NormalTok{(train\_rf}\SpecialCharTok{$}\NormalTok{importance)[importanceOrder][}\DecValTok{2}\SpecialCharTok{:}\DecValTok{151}\NormalTok{]}
+\NormalTok{topnames }\OtherTok{=} \FunctionTok{append}\NormalTok{(topnames,}\StringTok{"V1"}\NormalTok{)}
+
+\NormalTok{top\_test }\OtherTok{\textless{}{-}}\NormalTok{ test.data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{all\_of}\NormalTok{(topnames))}
+\NormalTok{top\_train}\OtherTok{\textless{}{-}}\NormalTok{train.data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{all\_of}\NormalTok{(topnames))}
+\end{Highlighting}
+\end{Shaded}
+
+** Running Random Forest on Train data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(}\StringTok{"randomForest"}\NormalTok{)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{toptrain\_rf }\OtherTok{=} \FunctionTok{randomForest}\NormalTok{(top\_train}\SpecialCharTok{$}\NormalTok{V1}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data=}\NormalTok{top\_train, }\AttributeTok{ntree=}\DecValTok{37}\NormalTok{, }\AttributeTok{proximity=}\NormalTok{T)}
+\CommentTok{\#table(predict(train\_rf), train.data$V1)}
+\CommentTok{\#train\_rf}
+\FunctionTok{plot}\NormalTok{(toptrain\_rf)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-38-1.pdf}
+
+** Checking model on test data **
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{toptestPred }\OtherTok{=} \FunctionTok{predict}\NormalTok{(toptrain\_rf, }\AttributeTok{newdata=}\NormalTok{top\_test, }\AttributeTok{type =} \StringTok{\textquotesingle{}class\textquotesingle{}}\NormalTok{)}
+\CommentTok{\#table(testPred, test.data$V1)}
+
+\NormalTok{CM }\OtherTok{=} \FunctionTok{table}\NormalTok{(toptestPred, top\_test}\SpecialCharTok{$}\NormalTok{V1)}
+\NormalTok{accuracy }\OtherTok{=}\NormalTok{ (}\FunctionTok{sum}\NormalTok{(}\FunctionTok{diag}\NormalTok{(CM)))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(CM)}
+\NormalTok{accuracy}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.528
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  The performance does not improve that much for various values used to
+  subset features.
+\end{itemize}
+
+** Summary of the Process: **
+
+\begin{itemize}
+\item
+  We first extract the author name from the file paths.
+\item
+  Next, we clean the file names and pre-process it in the following
+  order:
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Join all files and convert into one corpus. This corpus will have rows
+  as each document.
+\item
+  Tokenize the documents(split each document into separate words) and
+  convert to lower case c)Remove numbers, punctuation, extra white
+  spaces and stop words (Words like `as',`the',`so' do not add much
+  meaning to the sentence without context. Hence we remove them to
+  reduce any noise in the data) from the document
+\item
+  Stemming (Words such as `run' and `running' essentially mean the same.
+  So in stemming, we take each word and use it's root value. In this
+  example, our root value will be `run')
+\end{enumerate}
+
+\begin{itemize}
+\item
+  We convert the output from step 3 to a sparse matrix. Rows in a sparse
+  matrix represent data for each document. The columns in the sparse
+  matrix represent each word identified after Step 2. The values for a
+  particular row, column in the matrix is the number of times the word
+  appears in the particular document.
+\item
+  We drop terms that may occur only once or twice in the documents. This
+  further removes some noise from the data and reduces number of
+  features.
+\item
+  Some texts can be small while some can be large. To compare several
+  texts, the frequency of each word relative to the length of the text
+  is more helpful than the count of each word in the text. We thus use
+  the TF IDF values for this Purpose. So we replace values in the sparse
+  matrix to TF IDF scores.
+\item
+  We then merge the author names with output from 5 to get train data.
+\item
+  Repeat steps 1 to step 6 using test data.
+\item
+  We ignore words present in the test set but not in the train set.
+\item
+  Using an intersection of words between train and test set, We now run
+  Random Forest for classification to get accuracy of 70.8\%.
+\item
+  We try using a number of most important features to reduce
+  dimensionality. However, this does not improve the performance.
+\end{itemize}
+
+\nextpage
+
+\#9. Association Rule Mining
+
+\begin{verbatim}
+## transactions as itemMatrix in sparse format with
+##  9835 rows (elements/itemsets/transactions) and
+##  169 columns (items) and a density of 0.02609146 
+## 
+## most frequent items:
+##       whole milk other vegetables       rolls/buns             soda 
+##             2513             1903             1809             1715 
+##           yogurt          (Other) 
+##             1372            34055 
+## 
+## element (itemset/transaction) length distribution:
+## sizes
+##    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16 
+## 2159 1643 1299 1005  855  645  545  438  350  246  182  117   78   77   55   46 
+##   17   18   19   20   21   22   23   24   26   27   28   29   32 
+##   29   14   14    9   11    4    6    1    1    1    1    3    1 
+## 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   2.000   3.000   4.409   6.000  32.000 
+## 
+## includes extended item information - examples:
+##             labels
+## 1 abrasive cleaner
+## 2 artif. sweetener
+## 3   baby cosmetics
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: RColorBrewer
+\end{verbatim}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-41-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  As the first step in cleaning the data, the duplicates were removed
+  and items in each row are separated by a comma.The summary statistics
+  of the data set are shown above. We can see that the data set has the
+  info of 9835 different shopping baskets. The plot shows the most
+  frequently bought items which include whole milk and vegetables
+  followed by rolls/buns, soda and yogurt.
+\end{itemize}
+
+\begin{verbatim}
+## Apriori
+## 
+## Parameter specification:
+##  confidence minval smax arem  aval originalSupport maxtime support minlen
+##         0.1    0.1    1 none FALSE            TRUE       5   0.001      1
+##  maxlen target  ext
+##      10  rules TRUE
+## 
+## Algorithmic control:
+##  filter tree heap memopt load sort verbose
+##     0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+## 
+## Absolute minimum support count: 9 
+## 
+## set item appearances ...[0 item(s)] done [0.00s].
+## set transactions ...[169 item(s), 9835 transaction(s)] done [0.01s].
+## sorting and recoding items ... [157 item(s)] done [0.00s].
+## creating transaction tree ... done [0.00s].
+## checking subsets of size 1 2 3 4 5 6 done [0.02s].
+## writing ... [32791 rule(s)] done [0.01s].
+## creating S4 object  ... done [0.02s].
+\end{verbatim}
+
+\begin{verbatim}
+## set of 32791 rules
+## 
+## rule length distribution (lhs + rhs):sizes
+##     1     2     3     4     5     6 
+##     8  2121 16468 12254  1880    60 
+## 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   3.000   3.000   3.429   4.000   6.000 
+## 
+## summary of quality measures:
+##     support           confidence        coverage             lift        
+##  Min.   :0.001017   Min.   :0.1000   Min.   :0.001017   Min.   : 0.4193  
+##  1st Qu.:0.001118   1st Qu.:0.1692   1st Qu.:0.003457   1st Qu.: 1.9568  
+##  Median :0.001423   Median :0.2609   Median :0.005897   Median : 2.5771  
+##  Mean   :0.002070   Mean   :0.3118   Mean   :0.009387   Mean   : 2.8378  
+##  3rd Qu.:0.002034   3rd Qu.:0.4167   3rd Qu.:0.009761   3rd Qu.: 3.3979  
+##  Max.   :0.255516   Max.   :1.0000   Max.   :1.000000   Max.   :35.7158  
+##      count        
+##  Min.   :  10.00  
+##  1st Qu.:  11.00  
+##  Median :  14.00  
+##  Mean   :  20.36  
+##  3rd Qu.:  20.00  
+##  Max.   :2513.00  
+## 
+## mining info:
+##       data ntransactions support confidence
+##  groceries          9835   0.001        0.1
+##                                                                                call
+##  apriori(data = groceries, parameter = list(supp = 0.001, conf = 0.1, maxlen = 10))
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  The next step after the cleaning of data is to find the association
+  rules in the data set. I used the apriori function with support =
+  0.001, confidence = 0.1 and max length = 10. As we can see in the
+  output, a total of 32791 association rules were formed with these
+  parameters.
+\end{itemize}
+
+\begin{verbatim}
+## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
+\end{verbatim}
+
+\includegraphics{STA380_Viv_files/figure-latex/unnamed-chunk-43-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  In order to find strong associations, we need the association rules
+  which have high lift and high confidence. Based on the above plot,
+  selecting the association rules which have lift greater than 5 and
+  confidence greater than 0.5.This gives us 455 such associations. below
+  are the first 10 of these 455 associations.
+\end{itemize}
+
+\begin{verbatim}
+##      lhs                         rhs                      support confidence    coverage      lift count
+## [1]  {liquor,                                                                                           
+##       red/blush wine}         => {bottled beer}       0.001931876  0.9047619 0.002135231 11.235269    19
+## [2]  {liquor,                                                                                           
+##       soda}                   => {bottled beer}       0.001220132  0.5714286 0.002135231  7.095960    12
+## [3]  {jam,                                                                                              
+##       other vegetables}       => {root vegetables}    0.001016777  0.5555556 0.001830198  5.096911    10
+## [4]  {instant coffee,                                                                                   
+##       other vegetables}       => {whipped/sour cream} 0.001016777  0.5263158 0.001931876  7.342292    10
+## [5]  {popcorn,                                                                                          
+##       soda}                   => {salty snack}        0.001220132  0.6315789 0.001931876 16.697793    12
+## [6]  {dog food,                                                                                         
+##       yogurt}                 => {tropical fruit}     0.001016777  0.5263158 0.001931876  5.015810    10
+## [7]  {Instant food products,                                                                            
+##       soda}                   => {hamburger meat}     0.001220132  0.6315789 0.001931876 18.995654    12
+## [8]  {tropical fruit,                                                                                   
+##       turkey}                 => {root vegetables}    0.001525165  0.5769231 0.002643620  5.292946    15
+## [9]  {root vegetables,                                                                                  
+##       turkey}                 => {tropical fruit}     0.001525165  0.6000000 0.002541942  5.718023    15
+## [10] {butter,                                                                                           
+##       rice}                   => {root vegetables}    0.001016777  0.5555556 0.001830198  5.096911    10
+\end{verbatim}
+
+We can see that almost all of associations make sense. The first
+association in table shows that people who buy liquor are very likely to
+buy bottled beer. These two items definitely go together. Jam,other
+vegetables and root vegetables are also consumed together. Likewise, the
+association between popcorn, soda and salty snack makes sense.
+
+\end{document}
